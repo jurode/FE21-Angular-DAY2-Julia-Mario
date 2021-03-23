@@ -1,37 +1,38 @@
+<h1>Contact us</h1>
+<p>If you have questions, please don't hesitate to contact us.</p>
+
 <form [formGroup]="info" (ngSubmit)="onSubmit()">
- 
 
-    <label>  
-      First Name:  
-      <input type="text" formControlName="firstName">  
-    </label>
-     
-  
-    <label>  
-      Last Name:  
-      <input type="text" formControlName="lastName">  
-    </label>
-     
-  
-    <label>  
-      Age:  
-      <input type="text" formControlName="age">  
-    </label>
+  <fieldset class="bg-light p-5">
+    <legend>Enter your contact details</legend>
+    <div class="row">
+      <label for="fName" class="col-2">First Name:</label>
+      <input id="fName" type="text" formControlName="firstName" class="col-4">
+    </div>
     
-  
-    <label>  
-      Email:  
-      <input type="text" formControlName="email">  
-    </label>
-
-
-    <label>  
-        City:  
-        <input type="text" formControlName="city">  
-    </label>  
-  
+    <div class="row">
+      <label for="lName" class="col-2">Last Name:</label>
+      <input id="lName" type="text" formControlName="lastName" class="col-4">
+    </div>
+    <div class="row">
+      <label class="col-2" for="age">Age:</label>
+      <input id="age" type="text" formControlName="age" class="col-2">
+    </div>
     
-    <input type="submit" class="btn btn-primary" value="Submit">  
-   
-  
-   </form>
+    <div class="row">
+      <label class="col-2" for="email">Email:</label>
+      <input type="text" formControlName="email" class="col-4" id="email">
+      
+    </div>
+    
+    <div class="row">
+      <label class="col-2" for="city">City:</label>
+      <input type="text" formControlName="city" class="col-4" id="city">
+    </div>
+    
+    <input type="submit" class="btn btn-primary mt-3" value="Submit">
+  </fieldset>
+
+</form>
+  <!-- SweetAlert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>

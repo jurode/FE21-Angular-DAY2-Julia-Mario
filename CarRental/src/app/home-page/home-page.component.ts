@@ -9,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class HomePageComponent implements OnInit {
 
-  
+
   constructor() { }
 
   ngOnInit(): void {
@@ -32,20 +32,29 @@ export class HomePageComponent implements OnInit {
   ];
 
   add = new FormGroup({
-    brand: new FormControl('',Validators.required),
-    type: new FormControl('',Validators.required),
-    PS: new FormControl('',Validators.required),
-  }); 
+    brand: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    type: new FormControl('', Validators.required),
+    PS: new FormControl('', Validators.required),
+  });
 
-  addCar(){
-    var a = this.add.value;
+  addCar() {
+    if (this.add.valid) {
+      var a = this.add.value;
 
-    console.log(this.cars);   
-    console.log(a);
+      console.log(this.cars);
+      console.log(a);
 
-    // push "a" to array
-    this.cars.push(a);
+      // push "a" to array
+      this.cars.push(a);
 
+    }
+
+  }
+
+  // by clicking on the #staffOnly, the "d-none" will be added or removed according if it is already there or not
+  openStaffArea() {
+    var element = document.getElementById("staffOnly");
+    element.classList.toggle("d-none");
   }
 
 }

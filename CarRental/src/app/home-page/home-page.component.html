@@ -5,38 +5,39 @@
     <!-- here comes output of array cars -->
     <div *ngFor="let car of cars">
         <div class="card m-2" style="width: 18rem;">
-            <img src="https://www.flaticon.com/svg/vstatic/svg/741/741407.svg?token=exp=1616504350~hmac=a6a20ac75dec8b1db3d3832509c37d89" alt=""  class="card-img-top">
+            <img src="https://www.flaticon.com/svg/vstatic/svg/741/741407.svg?token=exp=1616504350~hmac=a6a20ac75dec8b1db3d3832509c37d89"
+                alt="" class="card-img-top">
             <p class="h5 card-title text-center">{{car.brand}}</p>
             <p class="card-text text-center">{{car.type}}</p>
             <p class="small text-center">{{car.PS}} PS</p>
-            
+            <button class="btn btn-secondary">rent</button>
         </div>
     </div>
 </div>
 
 
 <hr>
+<!-- with click on button- the div#staffOnly opens -->
+<button (click)="openStaffArea()" class="btn btn-light mb-4">Add new Car</button>
 
-<h2 class="h4">For staff only:</h2>
-<form [formGroup]="add" (ngSubmit)="addCar()">
+<div id="staffOnly" class="d-none m-5">
+    <h2 class="h4">For staff only:</h2>
+    <form [formGroup]="add" (ngSubmit)="addCar()">
 
-    <label>
-        Brand:
-        <input type="text" formControlName="brand">
-    </label>
-    <br>
-    <label>
-        Type:
-        <input type="text" formControlName="type">
-    </label>
-    <br>
+        <div class="row">
+            <label for="brand" class="col-2">Brand:</label>
+            <input id="brand" type="text" formControlName="brand" class="col-4">
+        </div>
+        <div class="row">
+            <label for="type" class="col-2">Type:</label>
+            <input id="type" type="text" formControlName="type" class="col-4">
+        </div>
+        <div class="row">
+            <label for="ps" class="col-2">PS:</label>
+            <input id="ps" type="text" formControlName="PS" class="col-4">
+        </div>
 
-    <label>
-        PS
-        <input type="text" formControlName="PS">
-    </label>
-    <br>
+        <input type="submit" class="btn btn-primary" value="Submit">
 
-    <input type="submit" class="btn btn-primary" value="Submit">
-
-</form>
+    </form>
+</div>
