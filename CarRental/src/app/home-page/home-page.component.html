@@ -1,9 +1,42 @@
 <h1>Our cars</h1>
 <p>We have very nice cars here.</p>
 
-<!-- here comes output of array cars -->
-<div *ngFor="let car of cars">
-    <p>{{car.brand}}</p>
-    <p>{{car.type}}</p>
-    <p>{{car.PS}}</p>
+<div class="d-flex flex-wrap">
+    <!-- here comes output of array cars -->
+    <div *ngFor="let car of cars">
+        <div class="card m-2" style="width: 18rem;">
+            <img src="https://www.flaticon.com/svg/vstatic/svg/741/741407.svg?token=exp=1616504350~hmac=a6a20ac75dec8b1db3d3832509c37d89" alt=""  class="card-img-top">
+            <p class="h5 card-title text-center">{{car.brand}}</p>
+            <p class="card-text text-center">{{car.type}}</p>
+            <p class="small text-center">{{car.PS}} PS</p>
+            
+        </div>
+    </div>
 </div>
+
+
+<hr>
+
+<h2 class="h4">For staff only:</h2>
+<form [formGroup]="add" (ngSubmit)="addCar()">
+
+    <label>
+        Brand:
+        <input type="text" formControlName="brand">
+    </label>
+    <br>
+    <label>
+        Type:
+        <input type="text" formControlName="type">
+    </label>
+    <br>
+
+    <label>
+        PS
+        <input type="text" formControlName="PS">
+    </label>
+    <br>
+
+    <input type="submit" class="btn btn-primary" value="Submit">
+
+</form>

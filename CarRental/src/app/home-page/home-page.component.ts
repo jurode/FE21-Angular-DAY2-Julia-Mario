@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-home-page',
@@ -12,8 +14,6 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  
 
   cars = [
     {
@@ -29,6 +29,23 @@ export class HomePageComponent implements OnInit {
       "type": "Auris",
       "PS": "136"
     }
-  ]
+  ];
+
+  add = new FormGroup({
+    brand: new FormControl('',Validators.required),
+    type: new FormControl('',Validators.required),
+    PS: new FormControl('',Validators.required),
+  }); 
+
+  addCar(){
+    var a = this.add.value;
+
+    console.log(this.cars);   
+    console.log(a);
+
+    // push "a" to array
+    this.cars.push(a);
+
+  }
 
 }
