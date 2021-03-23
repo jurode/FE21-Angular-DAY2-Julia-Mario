@@ -19,15 +19,23 @@ export class HomePageComponent implements OnInit {
     {
       "brand": "VW",
       "type": "Golf 6",
-      "PS": "130"
+      "PS": "130",
+      "price": "25"
     }, {
       "brand": "Ford",
       "type": "Galaxy",
-      "PS": "120"
-    }, {
+      "PS": "120",
+      "price": "22"
+    },{
       "brand": "Toyota",
       "type": "Auris",
-      "PS": "136"
+      "PS": "136",
+      "price": "21"
+    },{
+      "brand": "BMW",
+      "type": "3er",
+      "PS": "159",
+      "price": "31"
     }
   ];
 
@@ -35,6 +43,7 @@ export class HomePageComponent implements OnInit {
     brand: new FormControl('', [Validators.required, Validators.minLength(2)]),
     type: new FormControl('', Validators.required),
     PS: new FormControl('', Validators.required),
+    price: new FormControl('', Validators.required)
   });
 
   addCar() {

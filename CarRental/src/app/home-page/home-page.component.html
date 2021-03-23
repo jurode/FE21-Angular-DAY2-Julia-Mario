@@ -10,11 +10,12 @@
             <p class="h5 card-title text-center">{{car.brand}}</p>
             <p class="card-text text-center">{{car.type}}</p>
             <p class="small text-center">{{car.PS}} PS</p>
-            <button class="btn btn-secondary">rent</button>
+            <p class="card-text text-center">{{car.price}} €/day*</p>
+            <button class="btn btn-primary">rent</button>
         </div>
     </div>
 </div>
-
+<div class="small text-center">*excl. insurance and taxes</div>
 
 <hr>
 <!-- with click on button- the div#staffOnly opens -->
@@ -35,6 +36,10 @@
         <div class="row">
             <label for="ps" class="col-2">PS:</label>
             <input id="ps" type="text" formControlName="PS" class="col-4">
+        </div>
+        <div class="row">
+            <label for="price" class="col-2">Price per day:</label>
+            <input id="price" type="text" formControlName="price" class="col-4">
         </div>
 
         <input type="submit" class="btn btn-primary" value="Submit">
