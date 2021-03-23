@@ -7,7 +7,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './contact-page.component.html',
   styleUrls: ['./contact-page.component.css']
 })
+
 export class ContactPageComponent implements OnInit {
+  
 
   info = new FormGroup({
     firstName: new FormControl('',[Validators.required, Validators.minLength(3)]),
@@ -30,9 +32,13 @@ export class ContactPageComponent implements OnInit {
       alert('Thank you. We will contact you shortly!')
     } else {
       alert("Please enter your contact details");
+      
     }
    
   }
 
 
 }
+
+
+
